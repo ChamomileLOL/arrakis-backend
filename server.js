@@ -1,3 +1,4 @@
+const cors = require('cors');
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
@@ -20,7 +21,7 @@ const connectDB = async () => {
 connectDB();
 
 const app = express();
-
+app.use(cors());
 // Middleware to parse JSON
 app.use(express.json());
 
